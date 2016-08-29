@@ -1,0 +1,187 @@
+<script type="application/json" id="fccdata">
+  {
+        "data": [
+        {
+            "hospital": {
+                "name" : "Boston National",
+                "location": "Boston",
+                "cost": "10000",
+                                "latitude":42.358627,
+                "longitude":-71.146367
+             }
+        },
+        {
+            "hospital": {
+                "name" : "Boston United",
+                "location": "Boston",
+                "cost": "15000",
+                                "latitude":42.358627,
+                "longitude":-71.146367
+             }
+        },
+        {
+            "hospital": {
+                "name" : "Boston United",
+                "location": "Boston",
+                "cost": "25000",
+                            "latitude":42.358627,
+                "longitude":-71.146367
+             }
+        },
+        {
+            "hospital": {
+                "name" : "UCSD Hospital",
+                "location": "San Diego",
+                "cost": "15,000",
+                            "latitude":32.782289,
+                "longitude":-117.130480
+             }
+        },
+         {
+            "hospital": {
+                "name" : "USC Branch",
+                "location": "San Diego",
+                "cost": "22,000",
+                            "latitude":32.782289,
+                "longitude":-117.130480
+             }
+        },
+        {
+            "hospital": {
+                "name" : "San Diego United",
+                "location": "San Diego",
+                "cost": "20,000",
+                            "latitude":32.782289,
+                "longitude":-117.130480
+             }
+        },
+         {
+            "hospital": {
+                "name" : "Grossmont Hospital",
+                "location": "San Diego",
+                "cost": "10,000",
+                            "latitude":32.782289,
+                "longitude":-117.130480
+             }
+        }
+
+
+  ]
+    }
+</script>
+
+  <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+
+    .left-side{
+      position: fixed;
+      width: 650px;
+      z-index: 1;
+
+    }
+
+
+  </style>
+<div class="left-side">
+    <div class="choose">
+      <br>
+      <br>
+      <br>
+      <h1>I want to search by:</h1>
+      <button id="locationbtn">Location</button>
+      <div class="form-group" id="locationstuff">
+      <label for="location">Please Enter Your City:</label>
+      <input type="text" class="form-control" id="location">
+          <input type="button" onclick="myFunction()" value="Submit">
+    </div>
+      <br/>
+      <button>Specialty</button>
+     <br/>
+      <button>Procedure</button>
+      <br/>
+      <button>Overall Rating</button>
+    </div>
+    <div class="container1">
+      <h1>Hospital Analysis</h1>
+      <svg class="chart" height="250px" width="600px"></svg>
+      <button onclick="myFunction2()">Search Again</button>
+    </div>
+</div>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat:42.358627, lng: -71.146367},
+          zoom: 13
+        });
+
+        provider();
+      }
+
+          function provider(){
+          var myLatLng = {lat: 42.33485, lng: -71.07374};
+          var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'BOSTON MEDICAL CENTER CORPORATION'
+          });
+
+          var myLatLng = {lat: 42.3745041, lng: -71.10418};
+          var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'NEW ENGLAND BAPTIST HOSPITAL'
+          });
+
+          var myLatLng = {lat: 42.3293228, lng: -71.1071854};
+          var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'TUFTS MEDICAL CENTER'
+          });
+
+
+
+
+
+          var myLatLng = {lat: 32.7511253, lng: -117.1606};
+          var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'SCRIPPS MERCY HOSPITAL'
+          });
+
+          var myLatLng = {lat: 32.7542572, lng: -117.165924};
+          var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'UNIVERSITY OF CALIFORNIA SAN DIEGO MEDICAL CENTER'
+          });
+
+             var myLatLng = {lat: 32.7914276, lng: -117.095139};
+          var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'KAISER FOUNDATION HOSPITAL'
+          });
+
+            var myLatLng = {lat: 32.77495, lng: -117.014671};
+          var marker = new google.maps.Marker({
+              position: myLatLng,
+              map: map,
+              title: 'GROSSMONT HOSPITAL'
+          });
+
+
+          }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDjB5G0Fod2mUs0u9a-B4cF3xyqQa5uAs&callback=initMap"
+    async defer></script>
