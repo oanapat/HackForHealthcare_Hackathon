@@ -1,24 +1,16 @@
 #content{
-	/*aligned the text to the center of the page*/
 	text-align: center;
-	/*moved the text down on the page by 25%. It's in percentages so that it can be more responsive*/
 	padding-top: 25%;
-	/*add a shadow to the text. First is the x, then y, then the blurr*/
 	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
 				 0px 8px 13px rgba(0,0,0,0.1),
 				 0px 18px 23px rgba(0,0,0,0.1);
 }
 
 body{
-	/*making the image the ENTIRE background of our website*/
-	/*background:url(https://images.unsplash.com/reserve/m6rT4MYFQ7CT8j9m2AEC_JakeGivens%20-%20Sunset%20in%20the%20Park.JPG?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;s=a5997eee6e3da2ce36290fe1eccbf800);*/
 	background:url(https://images.unsplash.com/photo-1472554117599-50e86139f312?dpr=1.100000023841858&amp;auto=format&amp;crop=entropy&amp;fit=crop&amp;w=1500&amp;h=1000&amp;q=80&amp;cs=tinysrgb);
-	/*since the image is VERY BIG, we will set the size to cover, it will stretch in both directions to fit.
-	SHHOULD THIS NOT WORK, daca tot o sa avem o imagine mult prea mare, o putem centra.*/
 	background-size: cover;
 	background-position: center;
 	font-family: lato;
-	/*by setting the color in the body to white, everything in the body inherited the color so all the h1,h1,h3, have te color white*/
 	color: white;
 } 
 
@@ -26,19 +18,12 @@ hr{
 	width: 400px;
 }
 
-/*BODY HEIGHT clarification:
-So basically what is happening here is that the body/html are only taking up the space of the content within them. When there's no content, they don't take up any space, when there is content (say a paragraph, or a navbar, buttons, etc.) then it extends to the bottom of the last element. 
-In this situation, we're basing the height of our background image off of the height of the HTML document, or the HTML element rather. So we have to go into our CSS and explicitly tell the HTML document to take up 100% of the page, therefore allowing the background of the site to also take up 100% of the page.
-Please let me know if you need any further clarification.;*/
 html{
 	height: 100%;
 	border-top: 1px solid #f8f8f8;
 	border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-/*h1,h3,h4{
-	color: white;
-}*/
 
 h1{
 	font-weight: 700;
